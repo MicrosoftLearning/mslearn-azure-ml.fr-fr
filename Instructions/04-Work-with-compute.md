@@ -21,7 +21,7 @@ Pour créer l’espace de travail Azure Machine Learning, vous allez utiliser Az
 
 1. Dans un navigateur, ouvrez le portail Azure sur `https://portal.azure.com/` en vous connectant avec votre compte Microsoft.
 1. Sélectionnez le bouton \[>_] (*Cloud Shell*) en haut de la page, à droite de la zone de recherche. Cela a pour effet d’ouvrir un volet de Cloud Shell au bas du portail.
-1. Sélectionnez **Bash** si vous y êtes invité. Lorsque vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*). 
+1. Sélectionnez **Bash** si vous y êtes invité. Quand vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
 1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le stockage soit créé.
 1. Pour éviter tout conflit avec les versions précédentes, supprimez toutes les extensions CLI ML (les versions 1 et 2) en exécutant cette commande dans le terminal :
 
@@ -30,9 +30,9 @@ Pour créer l’espace de travail Azure Machine Learning, vous allez utiliser Az
     az extension remove -n ml
     ```
 
-    > Utilisez `SHIFT + INSERT` pour coller votre code copié dans Cloud Shell. 
+    > Utilisez `SHIFT + INSERT` pour coller votre code copié dans Cloud Shell.
 
-    > Ignorez les messages (d’erreur) indiquant que les extensions n’ont pas été installées. 
+    > Ignorez les messages (d’erreur) indiquant que les extensions n’ont pas été installées.
 
 1. Installez l’extension Azure Machine Learning (v2) à l’aide de la commande suivante :
     
@@ -52,7 +52,7 @@ Pour créer l’espace de travail Azure Machine Learning, vous allez utiliser Az
     az ml workspace create --name "mlw-dp100-labs" -g "rg-dp100-labs"
     ```
 
-1. Attendez que la commande se termine, ce qui prend généralement entre 5 et 10 minutes. 
+1. Attendez que la commande se termine, ce qui prend généralement entre 5 et 10 minutes.
 
 ## Créer le script de configuration d’une instance de calcul
 
@@ -62,7 +62,7 @@ Pour exécuter des notebooks dans l’espace de travail Azure Machine Learning, 
 1. Sélectionnez l’espace de travail Azure Machine Learning et, dans sa page **Vue d’ensemble**, sélectionnez **Lancer le studio**. Un autre onglet s’ouvre dans votre navigateur pour ouvrir le studio Azure Machine Learning.
 1. Fermez les fenêtres contextuelles qui s’affichent dans le studio.
 1. Dans le studio Azure Machine Learning, accédez à la page **Notebooks**.
-1. Dans le volet **Fichiers**, sélectionnez l’icône &#10753; pour **Ajouter des fichiers**. 
+1. Dans le volet **Fichiers**, sélectionnez l’icône &#10753; pour **Ajouter des fichiers**.
 1. Sélectionnez **Create new file**.
 1. Vérifiez que l’emplacement du fichier est **Users/* votre-nom-utilisateur***.
 1. Remplacez le type de fichier par **Bash (*.sh)** .
@@ -89,15 +89,15 @@ Pour créer l’instance de calcul, vous pouvez utiliser le studio, le SDK Pytho
     - **Type de machine virtuelle** : *Processeur*
     - **Taille de machine virtuelle** : *Standard_DS11_v2*
 1. Sélectionnez **Suivant : Paramètres avancés**.
-1. Sélectionnez **Ajouter une planification** et configurez la planification pour **arrêter** l’instance de calcul tous les jours à **18:00** ou **6:00 PM**. 
-1. Passez le bouton bascule sur **Provisionner avec le script de configuration**. 
+1. Sélectionnez **Ajouter une planification** et configurez la planification pour **arrêter** l’instance de calcul tous les jours à **18:00** ou **6:00 PM**.
+1. Passez le bouton bascule sur **Provisionner avec le script de configuration**.
 1. Sélectionnez le script **compute-setup.sh** que vous avez créé précédemment.
 1. Passez en revue les autres paramètres avancés, mais ne les sélectionnez **pas** :
     - **Activer l’accès SSH** : *Vous pouvez utiliser cette option pour avoir un accès direct à la machine virtuelle en utilisant un client SSH.*
     - **Activer un réseau virtuel** : *Vous utiliserez généralement cette option dans un environnement d’entreprise pour améliorer la sécurité réseau.*
     - **Attribuer à un autre utilisateur** : *Vous pouvez utiliser cette option pour attribuer une instance de calcul à un autre scientifique des données.*
 1. **Créez** l’instance de calcul et attendez qu’elle démarre et que son état passe à **En cours d’exécution**.
-1. Lorsque l’instance de calcul est en cours d’exécution, accédez à la page **Notebooks**. Dans le volet **Fichiers**, cliquez sur **&#8635;** pour actualiser l’affichage et vérifier qu’un nouveau dossier **Users/*votre-nom-utilisateur*/dp100-azure-ml-labs** a été créé. 
+1. Lorsque l’instance de calcul est en cours d’exécution, accédez à la page **Notebooks**. Dans le volet **Fichiers**, cliquez sur **&#8635;** pour actualiser l’affichage et vérifier qu’un nouveau dossier **Users/*votre-nom-utilisateur*/dp100-azure-ml-labs** a été créé.
 
 ## Configurer l’instance de calcul
 
@@ -113,7 +113,7 @@ Une fois que vous avez créé l’instance de calcul, vous pouvez y exécuter de
 
     > Ignorez les messages (d’erreur) indiquant que les packages n’ont pas été installés.
 
-1. Lorsque les packages sont installés, vous pouvez fermer l’onglet pour arrêter le terminal. 
+1. Lorsque les packages sont installés, vous pouvez fermer l’onglet pour arrêter le terminal.
 
 ## Créer un cluster de calcul
 
@@ -121,9 +121,9 @@ Les notebooks sont parfaits pour le développement ou le travail répétitif pen
 
 1. Ouvrez le notebook **Labs/04/Work with compute.ipynb**.
 
-    > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier. 
+    > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**. 
+1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
 1. Exécutez toutes les cellules dans le notebook.
 
 ## Supprimer les ressources Azure
@@ -133,5 +133,5 @@ Une fois que vous avez fini d’explorer Azure Machine Learning, vous devriez su
 1. Fermez l’onglet du studio Azure Machine Learning et revenez au portail Azure.
 1. Dans le portail Azure, dans la page **Accueil**, sélectionnez **Groupes de ressources**.
 1. Sélectionnez le groupe de ressources **rg-dp100-labs**.
-1. Au sommet de la page **Vue d’ensemble** de votre groupe de ressources, sélectionnez **Supprimer le groupe de ressources**. 
+1. Au sommet de la page **Vue d’ensemble** de votre groupe de ressources, sélectionnez **Supprimer le groupe de ressources**.
 1. Entrez le nom du groupe de ressources pour confirmer que vous souhaitez le supprimer, puis sélectionnez **Supprimer**.
