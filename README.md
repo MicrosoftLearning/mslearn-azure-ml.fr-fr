@@ -12,6 +12,6 @@ Vous pouvez consulter les instructions relatives aux exercices de labo sur [http
 
 ## Comment puis-je contribuer ?
 
-- Tout le monde peut soumettre une demande de tirage au code ou au contenu dans le dépôt GitHub. Microsoft et l’auteur du cours trieront et incluront le contenu et les modifications du code de labo si besoin.
+- Tout le monde peut soumettre une demande de tirage au code ou au contenu dans le référentiel GitHub. Microsoft et l’auteur du cours vont trier et inclure le contenu et les modifications du code de labo au besoin.
 
 - Vous pouvez soumettre des bogues, des changements, des améliorations et des idées.  Vous avez découvert une nouvelle fonctionnalité Azure avant nous ?  Envoyez une nouvelle démonstration !
