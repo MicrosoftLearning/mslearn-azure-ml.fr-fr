@@ -15,7 +15,7 @@ Vous avez besoin d’un [abonnement Azure](https://azure.microsoft.com/free?azur
 
 ## Provisionner un espace de travail Azure Machine Learning
 
-Un *espace de travail* Azure Machine Learning offre un emplacement central pour gérer toutes les ressources et tous les éléments dont vous avez besoin pour entraîner et gérer vos modèles. Vous pouvez interagir avec l’espace de travail Azure Machine Learning via le studio, le SDK Python et Azure CLI. 
+Un *espace de travail* Azure Machine Learning offre un emplacement central pour gérer toutes les ressources et tous les éléments dont vous avez besoin pour entraîner et gérer vos modèles. Vous pouvez interagir avec l’espace de travail Azure Machine Learning via le studio, le SDK Python et Azure CLI.
 
 Vous allez utiliser Azure CLI pour provisionner l’espace de travail et le calcul nécessaire, puis utiliser le SDK Python pour entraîner un modèle de classification avec le Machine Learning automatisé.
 
@@ -25,8 +25,8 @@ Pour créer l’espace de travail Azure Machine Learning, une instance de calcul
 
 1. Dans un navigateur, ouvrez le portail Azure sur `https://portal.azure.com/` en vous connectant avec votre compte Microsoft.
 1. Sélectionnez le bouton \[>_] (*Cloud Shell*) en haut de la page, à droite de la zone de recherche. Cela a pour effet d’ouvrir un volet de Cloud Shell au bas du portail.
-1. Sélectionnez **Bash** si vous y êtes invité. Lorsque vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*). 
-1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le compte de stockage soit créé.
+1. Sélectionnez **Bash** si vous y êtes invité. Quand vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
+1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le stockage soit créé.
 1. Dans le terminal, entrez les commandes suivantes pour cloner ce dépôt :
 
     ```azurecli
@@ -34,7 +34,7 @@ Pour créer l’espace de travail Azure Machine Learning, une instance de calcul
     git clone https://github.com/MicrosoftLearning/mslearn-azure-ml.git azure-ml-labs
     ```
 
-    > Utilisez `SHIFT + INSERT` pour coller votre code copié dans Cloud Shell. 
+    > Utilisez `SHIFT + INSERT` pour coller votre code copié dans Cloud Shell.
 
 1. Une fois que le dépôt a été cloné, entrez les commandes suivantes pour accéder au dossier de ce labo et exécutez le script **setup.sh** qu’il contient :
 
@@ -43,18 +43,18 @@ Pour créer l’espace de travail Azure Machine Learning, une instance de calcul
     ./setup.sh
     ```
 
-    > Ignorez les messages (d’erreur) indiquant que les extensions n’ont pas été installées. 
+    > Ignorez les messages (d’erreur) indiquant que les extensions n’ont pas été installées.
 
-1. Attendez que le script se termine, ce qui prend généralement entre 5 et 10 minutes. 
+1. Attendez que le script se termine, ce qui prend généralement entre 5 et 10 minutes.
 
 ## Cloner les supports de labo
 
-Une fois que vous avez créé l’espace de travail et les ressources de calcul nécessaires, vous pouvez ouvrir le studio Azure Machine Learning et cloner les supports de labo dans l’espace de travail. 
+Une fois que vous avez créé l’espace de travail et les ressources de calcul nécessaires, vous pouvez ouvrir le studio Azure Machine Learning et cloner les supports de labo dans l’espace de travail.
 
-1. Dans le portail Azure, accédez à l’espace de travail Azure Machine Learning nommé **mlw-dp100-labs**.
+1. Dans le Portail Azure, accédez à l’espace de travail Azure Machine Learning nommé **mlw-dp100-...** .
 1. Sélectionnez l’espace de travail Azure Machine Learning et, dans sa page **Vue d’ensemble**, sélectionnez **Lancer le studio**. Un autre onglet s’ouvre dans votre navigateur pour ouvrir le studio Azure Machine Learning.
 1. Fermez les fenêtres contextuelles qui s’affichent dans le studio.
-1. Dans le studio Azure Machine Learning, accédez à la page **Calcul** et vérifiez que l’instance de calcul et le cluster que vous avez créés dans la section précédente existent. L’instance de calcul doit être en cours d’exécution, le cluster doit être inactif et avoir 0 nœud en cours d’exécution.
+1. Dans le studio Azure Machine Learning, accédez à la page **Calcul** et vérifiez que l’instance de calcul et le cluster que vous avez créés dans la section précédente existent. L’instance de calcul doit être en cours d’exécution, et le cluster doit être inactif et avoir 0 nœud en cours d’exécution.
 1. Sous l’onglet **Instances de calcul**, recherchez votre instance de calcul et sélectionnez l’application **Terminal**.
 1. Dans le terminal, installez le SDK Python sur l’instance de calcul en exécutant les commandes suivantes :
 
@@ -69,9 +69,9 @@ Une fois que vous avez créé l’espace de travail et les ressources de calcul 
 
     ```
     git clone https://github.com/MicrosoftLearning/mslearn-azure-ml.git azure-ml-labs
-    ``` 
+    ```
 
-1. Une fois la commande exécutée, dans le volet **Fichiers**, cliquez sur **&#8635;** pour actualiser l’affichage et vérifier qu’un nouveau dossier **Users/*votre-nom-utilisateur*/azure-ml-labs** a été créé. 
+1. Une fois la commande exécutée, dans le volet **Fichiers**, cliquez sur **&#8635;** pour actualiser l’affichage et vérifier qu’un nouveau dossier **Users/*votre-nom-utilisateur*/azure-ml-labs** a été créé.
 
 ## Entraîner un modèle de classification avec le Machine Learning automatisé
 
@@ -79,19 +79,20 @@ Maintenant que vous disposez de toutes les ressources nécessaires, vous pouvez 
 
 1. Ouvrez le notebook **Labs/06/Classification with Automated Machine Learning.ipynb**.
 
-    > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier. 
+    > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**. 
-1. Exécutez toutes les cellules dans le notebook. 
+1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Exécutez toutes les cellules dans le notebook.
 
-Un nouveau travail est créé dans l’espace de travail Azure Machine Learning. Le travail suit les entrées définies dans la configuration de travail, la ressource de données utilisée et les sorties telles que les métriques pour évaluer les modèles.
+    Un nouveau travail est créé dans l’espace de travail Azure Machine Learning. Le travail suit les entrées définies dans la configuration de travail, la ressource de données utilisée et les sorties telles que les métriques pour évaluer les modèles.
 
-Notez que les travaux du Machine Learning automatisé contiennent des travaux enfants, qui représentent des modèles individuels qui ont été entraînés et autres tâches nécessaires à l’exécution. 
-
-3. Une fois que le travail du Machine Learning automatisé est terminé, explorez les détails du travail dans le studio :
+    Notez que les travaux du Machine Learning automatisé contiennent des travaux enfants, qui représentent des modèles individuels qui ont été entraînés et autres tâches nécessaires à l’exécution.
+1. Accédez à **Travaux** et sélectionnez l’expérience **auto-ml-class-dev**.
+1. Sélectionnez le travail sous la colonne **Nom d’affichage**.
+1. Attendez que son état passe à **Terminé**.
+1. Une fois que l’état du travail Machine Learning automatisé est passé à **Terminé**, explorez les détails du travail dans le studio :
     - L’onglet **Garde-fous des données** montre si vos données d’entraînement ont rencontré des problèmes.
-    - L’onglet **Modèles** montre tous les modèles qui ont été entraînés.
-    - Sélectionnez **Voir l’explication** pour le meilleur modèle afin de comprendre quelles caractéristiques ont le plus influencé la valeur cible.
+    - L’onglet **Modèles** montre tous les modèles qui ont été entraînés. Sélectionnez **Voir l’explication** pour le meilleur modèle afin de comprendre quelles caractéristiques ont le plus influencé la valeur cible.
 
 ## Supprimer les ressources Azure
 
@@ -99,6 +100,6 @@ Une fois que vous avez fini d’explorer Azure Machine Learning, vous devriez su
 
 1. Fermez l’onglet du studio Azure Machine Learning et revenez au portail Azure.
 1. Dans le portail Azure, dans la page **Accueil**, sélectionnez **Groupes de ressources**.
-1. Sélectionnez le groupe de ressources **rg-dp100-labs**.
-1. Au sommet de la page **Vue d’ensemble** de votre groupe de ressources, sélectionnez **Supprimer le groupe de ressources**. 
+1. Sélectionnez le groupe de ressources **rg-dp100-...** .
+1. Au sommet de la page **Vue d’ensemble** de votre groupe de ressources, sélectionnez **Supprimer le groupe de ressources**.
 1. Entrez le nom du groupe de ressources pour confirmer que vous souhaitez le supprimer, puis sélectionnez **Supprimer**.
