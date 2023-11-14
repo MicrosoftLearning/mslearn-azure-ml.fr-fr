@@ -25,8 +25,8 @@ Pour créer l’espace de travail Azure Machine Learning et un cluster de calcul
 
 1. Dans un navigateur, ouvrez le portail Azure sur `https://portal.azure.com/` en vous connectant avec votre compte Microsoft.
 1. Sélectionnez le bouton \[>_] (*Cloud Shell*) en haut de la page, à droite de la zone de recherche. Cela a pour effet d’ouvrir un volet de Cloud Shell au bas du portail.
-1. Sélectionnez **Bash** si vous y êtes invité. Quand vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
-1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le stockage soit créé.
+1. Sélectionnez **Bash** si vous y êtes invité. Lorsque vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
+1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le compte de stockage soit créé.
 1. Dans le terminal, entrez les commandes suivantes pour cloner ce dépôt :
 
     ```azurecli
@@ -51,7 +51,7 @@ Pour créer l’espace de travail Azure Machine Learning et un cluster de calcul
 
 Une fois que vous avez créé l’espace de travail et le cluster de calcul nécessaire, vous pouvez ouvrir le studio Azure Machine Learning et créer un pipeline d’entraînement avec le Concepteur.
 
-1. Dans le portail Azure, accédez à l’espace de travail Azure Machine Learning appelé **mlw-dp100-...** .
+1. Dans le portail Azure, accédez à l’espace de travail Azure Machine Learning appelé **mlw-dp100-...**.
 1. Sélectionnez l’espace de travail Azure Machine Learning et, dans sa page **Vue d’ensemble**, sélectionnez **Lancer le studio**. Un autre onglet s’ouvre dans votre navigateur pour ouvrir le studio Azure Machine Learning.
 1. Fermez les fenêtres contextuelles qui s’affichent dans le studio.
 1. Dans le studio Azure Machine Learning, accédez à la page **Calcul** et vérifiez que le cluster de calcul que vous avez créé dans la section précédente existe. Le cluster doit être inactif et avoir 0 nœud en cours d’exécution.
@@ -109,6 +109,6 @@ Une fois que vous avez fini d’explorer Azure Machine Learning, vous devriez su
 
 1. Fermez l’onglet du studio Azure Machine Learning et revenez au portail Azure.
 1. Dans le portail Azure, dans la page **Accueil**, sélectionnez **Groupes de ressources**.
-1. Sélectionnez le groupe de ressources **rg-dp100-...** .
+1. Sélectionnez le groupe de ressources **rg-dp100-...**.
 1. Au sommet de la page **Vue d’ensemble** de votre groupe de ressources, sélectionnez **Supprimer le groupe de ressources**.
 1. Entrez le nom du groupe de ressources pour confirmer que vous souhaitez le supprimer, puis sélectionnez **Supprimer**.
