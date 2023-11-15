@@ -51,15 +51,15 @@ Pour explorer l’utilisation des ressources et des éléments dans l’espace d
 
 Un moyen rapide de créer un pipeline d’entraînement de modèle consiste à utiliser le **Concepteur**.
 
-> **Remarque** : Des fenêtres contextuelles peuvent apparaître dans le studio pour vous guider. Vous pouvez fermer et ignorer toutes les fenêtres contextuelles et vous concentrer sur les instructions de ce labo.
+> **Remarque** : Des fenêtres contextuelles peuvent apparaître dans l’ensemble du studio pour vous guider. Vous pouvez fermer et ignorer toutes les fenêtres contextuelles et vous concentrer sur les instructions de ce labo.
 
 1. Sélectionnez la page **Concepteur** dans le menu situé à gauche du studio.
 1. Sélectionnez l’exemple **Régression - Prédiction du prix des véhicules automobiles (simple)** .
 
     Un nouveau pipeline s’affiche. En haut du pipeline, un composant s’affiche pour charger les **Données sur le prix des véhicules automobiles (brutes)** . Le pipeline traite les données et entraîne un modèle de régression linéaire pour prédire le prix de chaque automobile.
 1. Sélectionner **Configurer & soumettre** en haut de la page pour ouvrir la boîte de dialogue **Configurer la tâche de pipeline**
-1. Dans la page **De base**, sélectionnez **Créer** et définissez le nom de l’expérience sur `train-regression-designer`, puis sélectionnez **Suivant**.
-1. Dans la page **Entrées & sorties**, sélectionnez **Suivant** sans apporter de modifications.
+1. Sur la page **De base**, sélectionnez **Créer** et définissez le nom de l'expérience sur `train-regression-designer`, puis sélectionnez **Suivant**.
+1. Dans la page **Entrées et sorties**, sélectionnez **Suivant** sans apporter de modifications.
 1. Une erreur s’affiche dans la page **Paramètres d’exécution**, car vous n’avez pas de calcul par défaut pour exécuter le pipeline.
 
 Créons une cible de calcul.
@@ -71,13 +71,13 @@ Pour exécuter une charge de travail dans l’espace de travail Azure Machine Le
 1. Dans le studio Azure Machine Learning, sélectionnez la page **Calcul** dans le menu de gauche. Vous pouvez utiliser quatre sortes de ressources de calcul :
     - **Instances de calcul** : machine virtuelle gérée par Azure Machine Learning. Idéal pour le développement quand vous explorez des données et expérimentez de manière itérative des modèles Machine Learning.
     - **Clusters de calcul** : clusters scalables de machines virtuelles pour le traitement à la demande du code d’expérimentation. Idéal pour exécuter du code de production ou des travaux automatisés.
-    - **Clusters Kubernetes** : Un cluster Kubernetes utilisé pour l’entraînement et le scoring. Idéal pour le déploiement de modèles en temps réel à grande échelle.
+    - **Clusters Kubernetes** : Un cluster Kubernetes utilisé pour l'apprentissage et le scoring. Idéal pour le déploiement de modèles en temps réel à grande échelle.
     - **Capacité de calcul attachée** : attachez vos ressources de calcul Azure existantes à l’espace de travail, telles que les machines virtuelles ou les clusters Azure Databricks.
 
     Pour entraîner un modèle Machine Learning que vous avez créé avec le concepteur, vous pouvez utiliser une instance de calcul ou un cluster de calcul.
 
 2. Sous l’onglet **Instances de calcul**, ajoutez une nouvelle instance de calcul avec les paramètres suivants. 
-    - **Nom du calcul** : *Entrer un nom unique*
+    - **Nom de la capacité de calcul** : *Entrez un nom unique*
     - **Emplacement** : *automatiquement le même emplacement que votre espace de travail*
     - **Type de machine virtuelle** : `CPU`
     - **Taille de machine virtuelle** : `Standard_DS11_v2`
@@ -87,7 +87,7 @@ Pour exécuter une charge de travail dans l’espace de travail Azure Machine Le
         - **Activer un réseau virtuel** : `Unselected` *(vous utiliserez généralement cette option dans un environnement d’entreprise pour améliorer la sécurité réseau)*
         - **Attribuer à un autre utilisateur** : `Unselected` *(vous pouvez utiliser cette option pour attribuer une instance de calcul à un scientifique des données)*
         - **Provisionner avec un script d’installation** : `Unselected` *(permet d’ajouter un script à exécuter sur l’instance distante lors de la création)*
-        - **Attribuer une identité managée** : `Unselected` *(Vous pouvez joindre des identités managées affectées par le système ou par l’utilisateur pour accorder l’accès aux ressources)*
+        - **Attribuer une identité managée** : `Unselected`*(Vous pouvez joindre des identités managées affectées par le système ou par l’utilisateur pour accorder l’accès aux ressources)*
 
 3. Sélectionnez **Créer** et patientez jusqu’à ce que l’instance de calcul démarre et que son état passe à **En cours d’exécution**.
 
@@ -100,8 +100,8 @@ Vous avez créé une cible de calcul et vous pouvez maintenant exécuter votre e
 1. Accédez à la page **Concepteur**.
 1. Sélectionnez le brouillon de pipeline **Régression - Prédiction du prix des véhicules automobiles (simple)** .
 1. Sélectionner **Configurer & soumettre** en haut de la page pour ouvrir la boîte de dialogue **Configurer la tâche de pipeline**
-1. Dans la page **De base**, sélectionnez **Créer** et définissez le nom de l’expérience sur `train-regression-designer`, puis sélectionnez **Suivant**.
-1. Dans la page **Entrées & sorties**, sélectionnez **Suivant** sans apporter de modifications.
+1. Sur la page **De base**, sélectionnez **Créer** et définissez le nom de l'expérience sur `train-regression-designer`, puis sélectionnez **Suivant**.
+1. Dans la page **Entrées et sorties**, sélectionnez **Suivant** sans apporter de modifications.
 1. Dans les **Paramètres d’exécution**, dans le menu déroulant **Sélectionner le type de calcul**, sélectionnez *Instance de calcul* et, dans le menu déroulant **Sélectionner une instance de calcul Azure ML**, sélectionnez l’instance de calcul créée.
 1. Sélectionnez **Évaluer et soumettre** pour examiner le travail de pipeline, puis **Envoyer** pour exécuter le pipeline de formation.
 
