@@ -21,11 +21,11 @@ Vous allez utiliser un script Shell qui utilise Azure CLI pour provisionner l’
 
 ### Créer l’espace de travail et les ressources de calcul
 
-Pour créer l’espace de travail Azure Machine Learning et les ressources de calcul, vous allez utiliser Azure CLI. Toutes les commandes nécessaires sont regroupées dans un script Shell que vous pouvez exécuter.
+Pour créer l’espace de travail Azure Machine Learning et les ressources de calcul, vous utilisez Azure CLI. Toutes les commandes nécessaires sont regroupées dans un script Shell exécutable.
 
 1. Dans un navigateur, ouvrez le portail Azure sur `https://portal.azure.com/` en vous connectant avec votre compte Microsoft.
 1. Sélectionnez le bouton \[>_] (*Cloud Shell*) en haut de la page, à droite de la zone de recherche. Cela a pour effet d’ouvrir un volet de Cloud Shell au bas du portail.
-1. Sélectionnez **Bash** si vous y êtes invité. Quand vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
+1. Sélectionnez **Bash** si vous y êtes invité. Lorsque vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
 1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le stockage soit créé.
 1. Entrez les commandes suivantes dans le terminal pour cloner ce dépôt :
 
@@ -51,7 +51,7 @@ Pour créer l’espace de travail Azure Machine Learning et les ressources de ca
 
 Quand vous créez un espace de travail Azure Machine Learning, un compte de stockage est automatiquement créé et connecté à votre espace de travail. Vous allez découvrir comment le compte de stockage est connecté.
 
-1. Dans le Portail Azure, accédez au nouveau groupe de ressources nommé **rg-dp100-...** .
+1. Dans le Portail Azure, accédez au nouveau groupe de ressources nommé **rg-dp100-...**.
 1. Sélectionnez le compte de stockage dans le groupe de ressources. Le nom commence souvent par le nom que vous avez fourni pour l’espace de travail (sans traits d’union).
 1. Passez en revue la page **Vue d’ensemble** du compte de stockage. Notez que le compte de stockage dispose de plusieurs options pour le **stockage de données**, comme indiqué dans le volet Vue d’ensemble et dans le menu de gauche.
 1. Sélectionnez **Conteneurs** pour explorer la partie Stockage d’objets blob du compte de stockage.
@@ -79,7 +79,7 @@ Pour créer un magasin de données et des ressources de données avec le SDK Pyt
 1. Dans le portail Azure, accédez à l’espace de travail Azure Machine Learning nommé **mlw-dp100-labs**.
 1. Sélectionnez l’espace de travail Azure Machine Learning et, dans sa page **Vue d’ensemble**, sélectionnez **Lancer le studio**. Un autre onglet s’ouvre dans votre navigateur pour ouvrir le studio Azure Machine Learning.
 1. Fermez les fenêtres contextuelles qui s’affichent dans le studio.
-1. Dans le studio Azure Machine Learning, accédez à la page **Calcul** et vérifiez que l’instance de calcul et le cluster que vous avez créés dans la section précédente existent. L’instance de calcul doit être en cours d’exécution, et le cluster doit être inactif et avoir 0 nœud en cours d’exécution.
+1. Dans le studio Azure Machine Learning, accédez à la page **Calcul** et vérifiez que l’instance de calcul et le cluster que vous avez créés dans la section précédente existent. L’instance de calcul doit être en cours d’exécution, le cluster doit être inactif et avoir 0 nœud en cours d’exécution.
 1. Sous l’onglet **Instances de calcul**, recherchez votre instance de calcul et sélectionnez l’application **Terminal**.
 1. Dans le terminal, installez le SDK Python sur l’instance de calcul en exécutant les commandes suivantes :
 
@@ -109,7 +109,7 @@ Le code permettant de créer un magasin de données et des ressources de donnée
 
     > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
 1. Exécutez toutes les cellules dans le notebook.
 
 ## Facultatif : Explorer les ressources de données
@@ -127,6 +127,6 @@ Une fois que vous avez fini d’explorer Azure Machine Learning, vous devriez su
 
 1. Fermez l’onglet du studio Azure Machine Learning et revenez au portail Azure.
 1. Dans le portail Azure, dans la page **Accueil**, sélectionnez **Groupes de ressources**.
-1. Sélectionnez le groupe de ressources **rg-dp100-...** .
+1. Sélectionnez le groupe de ressources **rg-dp100-...**.
 1. Au sommet de la page **Vue d’ensemble** de votre groupe de ressources, sélectionnez **Supprimer le groupe de ressources**.
 1. Entrez le nom du groupe de ressources pour confirmer que vous souhaitez le supprimer, puis sélectionnez **Supprimer**.

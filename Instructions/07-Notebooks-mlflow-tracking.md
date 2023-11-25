@@ -17,15 +17,15 @@ Vous avez besoin d’un [abonnement Azure](https://azure.microsoft.com/free) dan
 
 Un *espace de travail* Azure Machine Learning offre un emplacement central pour gérer toutes les ressources et tous les éléments dont vous avez besoin pour entraîner et gérer vos modèles. Vous pouvez interagir avec l’espace de travail Azure Machine Learning via le studio, le SDK Python et Azure CLI.
 
-Vous allez utiliser Azure CLI pour provisionner l’espace de travail et le calcul nécessaire, puis utiliser le SDK Python pour entraîner un modèle de classification avec le Machine Learning automatisé.
+Vous allez utiliser Azure CLI pour provisionner l’espace de travail et les ressources de calcul nécessaires, puis utiliser le SDK Python pour entraîner un modèle de classification avec le Machine Learning automatisé.
 
 ### Créer l’espace de travail et les ressources de calcul
 
 Pour créer l’espace de travail Azure Machine Learning et une instance de calcul, vous utilisez Azure CLI. Toutes les commandes nécessaires sont regroupées dans un script Shell exécutable.
 1. Dans un navigateur, ouvrez le portail Azure sur `https://portal.azure.com/` en vous connectant avec votre compte Microsoft.
 1. Sélectionnez le bouton \[>_] (*Cloud Shell*) en haut de la page, à droite de la zone de recherche. Cela a pour effet d’ouvrir un volet de Cloud Shell au bas du portail.
-1. Sélectionnez **Bash** si vous y êtes invité. Quand vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
-1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le stockage soit créé.
+1. Sélectionnez **Bash** si vous y êtes invité. Lorsque vous ouvrez Cloud Shell pour la première fois, vous êtes invité à choisir le type d’interpréteur de commandes que vous souhaitez utiliser (*Bash* ou *PowerShell*).
+1. Vérifiez que le bon abonnement est spécifié et sélectionnez **Créer un stockage** si vous êtes invité à créer un stockage pour votre Cloud Shell. Attendez que le compte de stockage soit créé.
 1. Dans le terminal, entrez les commandes suivantes pour cloner ce dépôt :
 
     ```azurecli
@@ -50,7 +50,7 @@ Pour créer l’espace de travail Azure Machine Learning et une instance de calc
 
 Une fois que vous avez créé l’espace de travail et les ressources de calcul nécessaires, vous pouvez ouvrir le studio Azure Machine Learning et cloner les supports de labo dans l’espace de travail.
 
-1. Dans le Portail Azure, accédez à l’espace de travail Azure Machine Learning nommé **mlw-dp100-...** .
+1. Dans le portail Azure, accédez à l’espace de travail Azure Machine Learning appelé **mlw-dp100-...**.
 1. Sélectionnez l’espace de travail Azure Machine Learning et, dans sa page **Vue d’ensemble**, sélectionnez **Lancer le studio**. Un autre onglet s’ouvre dans votre navigateur pour ouvrir le studio Azure Machine Learning.
 1. Fermez les fenêtres contextuelles qui s’affichent dans le studio.
 1. Dans Azure Machine Learning studio, accédez à la page **Calcul** et vérifiez que l’instance de calcul créée dans la section précédente existe. L’instance de calcul doit être en cours d’exécution.
@@ -81,7 +81,7 @@ Maintenant que vous disposez de toutes les ressources nécessaires, vous pouvez 
 
     > Sélectionnez **S’authentifier** et suivez les étapes à faire si une notification vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
 1. Exécutez toutes les cellules dans le notebook.
 1. Examinez le nouveau travail qui est créé à chaque entraînement d’un modèle.
 
@@ -91,6 +91,6 @@ Une fois que vous avez fini d’explorer Azure Machine Learning, vous devriez su
 
 1. Fermez l’onglet du studio Azure Machine Learning et revenez au portail Azure.
 1. Dans le portail Azure, dans la page **Accueil**, sélectionnez **Groupes de ressources**.
-1. Sélectionnez le groupe de ressources **rg-dp100-...** .
+1. Sélectionnez le groupe de ressources **rg-dp100-...**.
 1. Au sommet de la page **Vue d’ensemble** de votre groupe de ressources, sélectionnez **Supprimer le groupe de ressources**.
 1. Entrez le nom du groupe de ressources pour confirmer que vous souhaitez le supprimer, puis sélectionnez **Supprimer**.
