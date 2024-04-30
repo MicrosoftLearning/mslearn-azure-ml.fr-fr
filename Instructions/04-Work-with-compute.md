@@ -88,15 +88,17 @@ Pour créer l’instance de calcul, vous pouvez utiliser le studio, le SDK Pytho
     - **Nom de la capacité de calcul** : *entrez un nom unique*
     - **Type de machine virtuelle** : *Processeur*
     - **Taille de machine virtuelle** : *Standard_DS11_v2*
-1. Sélectionnez **Suivant : Paramètres avancés**.
+1. Cliquez sur **Suivant**.
 1. Sélectionnez **Ajouter une planification** et configurez la planification pour **arrêter** l’instance de calcul tous les jours à **18:00** ou **6:00 PM**.
-1. Passez le bouton bascule sur **Provisionner avec le script de configuration**.
-1. Sélectionnez le script **compute-setup.sh** que vous avez créé précédemment.
-1. Passez en revue les autres paramètres avancés, mais ne les sélectionnez **pas** :
+1. Cliquez sur **Suivant**.
+1. Passez en revue les paramètres de sécurité, mais ne **les sélectionnez pas** :
     - **Activer l’accès SSH** : *Vous pouvez utiliser cette option pour avoir un accès direct à la machine virtuelle en utilisant un client SSH.*
     - **Activer un réseau virtuel** : *Vous utiliserez généralement cette option dans un environnement d’entreprise pour améliorer la sécurité réseau.*
     - **Attribuer à un autre utilisateur** : *Vous pouvez utiliser cette option pour attribuer une instance de calcul à un autre scientifique des données.*
-1. **Créez** l’instance de calcul et attendez qu’elle démarre et que son état passe à **En cours d’exécution**.
+1. Cliquez sur **Suivant**.
+1. Sélectionnez le bouton bascule pour **Approvisionner avec un script de création**.
+1. Sélectionnez le script **compute-setup.sh** que vous avez créé précédemment.
+1. Sélectionnez **Réviser + Créer** pour créer l’instance de calcul et attendez qu’elle démarre et que son état passe à **En cours d’exécution**.
 1. Lorsque l’instance de calcul est en cours d’exécution, accédez à la page **Notebooks**. Dans le volet **Fichiers**, cliquez sur **&#8635;** pour actualiser l’affichage et vérifier qu’un nouveau dossier **Users/*votre-nom-utilisateur*/dp100-azure-ml-labs** a été créé.
 
 ## Configurer l’instance de calcul
