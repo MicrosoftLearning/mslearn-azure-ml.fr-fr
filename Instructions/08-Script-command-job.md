@@ -114,9 +114,10 @@ Après avoir converti un notebook en script, vous souhaiterez peut-être l’aff
 
     Pour exécuter correctement le script, vous devez spécifier la valeur des paramètres de données d’entraînement. Pour ce faire, nous allons référencer le fichier **diabetes.csv** qui est stocké dans le même dossier que le script d’entraînement.
 
-1. Dans le terminal, exécutez la commande suivante :
+1. Dans le terminal, exécutez les commandes suivantes :
 
     ```
+    cd azure-ml-labs/Labs/08/src/
     python train-model-parameters.py --training_data diabetes.csv
     ```
 
