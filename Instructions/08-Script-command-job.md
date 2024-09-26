@@ -90,6 +90,13 @@ L’utilisation d’un notebook attaché à une instance de calcul est idéale p
 1. Sélectionnez l’icône &#9655;&#9655; en haut du notebook pour **enregistrer et exécuter le script dans le terminal**.
 1. Le script est lancé par la commande **python train-classification-model.py** et la sortie devrait apparaître sous la commande.
 
+   > **Remarque :** si le script retourne un ImportError pour libstdc++6, exécutez les commandes suivantes dans le terminal avant d’exécuter à nouveau le script :
+   > ```bash
+   > sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+   > sudo apt-get update
+   > sudo apt-get upgrade libstdc++6
+   > ```
+
 ## Tester un script avec le terminal
 
 Après avoir converti un notebook en script, vous souhaiterez peut-être l’affiner davantage. Une bonne pratique lors de l’utilisation de scripts consiste à utiliser des fonctions. Lorsque votre script se compose de fonctions, il est plus facile de procéder à un test unitaire de votre code. Lorsque vous utilisez des fonctions, votre script se compose de blocs de code, chaque bloc effectuant une tâche spécifique.
