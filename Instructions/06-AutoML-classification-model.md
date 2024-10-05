@@ -92,7 +92,9 @@ Maintenant que vous disposez de toutes les ressources nécessaires, vous pouvez 
 1. Attendez que son état passe à **Terminé**.
 1. Une fois que l’état du travail Machine Learning automatisé est passé à **Terminé**, explorez les détails du travail dans le studio :
     - L’onglet **Garde-fous des données** montre si vos données d’entraînement ont rencontré des problèmes.
-    - L’onglet **Modèles** montre tous les modèles qui ont été entraînés. Sélectionnez **Voir l’explication** pour le meilleur modèle afin de comprendre quelles caractéristiques ont le plus influencé la valeur cible.
+    - L’onglet **Modèles + travaux enfants** montre tous les modèles qui ont été entraînés. Sélectionnez **Expliquer le modèle** pour le meilleur modèle et créez le travail d’explication exécuté à l’aide du **aml-cluster**.
+    - Attendez qu’une nouvelle colonne **Expliqué** s’affiche en regard de la colonne **Nom de l’algorithme **et sélectionnez **Afficher l’explication**. Vous devrez peut-être actualiser la liste d’algorithmes pour que cette option apparaisse.
+    - Passez en revue le tableau de bord créé pour comprendre quelles fonctionnalités ont le plus influencé la valeur cible.
 
 ## Supprimer les ressources Azure
 

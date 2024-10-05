@@ -85,6 +85,8 @@ Maintenant que vous disposez de toutes les ressources nécessaires, vous pouvez 
 1. Exécutez toutes les cellules dans le notebook.
 1. Examinez le nouveau travail qui est créé à chaque entraînement d’un modèle.
 
+    > **Remarque :** lorsque vous entraînez un modèle, la sortie de la cellule affiche un lien vers l’exécution du travail. Si le lien retourne une erreur, vous pouvez toujours passer en revue l’exécution du travail en sélectionnant **Travaux** dans le volet gauche.
+    
 ## Supprimer les ressources Azure
 
 Une fois que vous avez fini d’explorer Azure Machine Learning, vous devriez supprimer les ressources que vous avez créées afin d’éviter des coûts Azure superflus.
