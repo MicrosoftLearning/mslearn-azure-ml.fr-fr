@@ -7,7 +7,7 @@ lab:
 
 Souvent, vous démarrerez un nouveau projet de science des données en expérimentant et en entraînant plusieurs modèles. Pour suivre votre travail et garder une vue d’ensemble des modèles que vous entraînez et de leur fonctionnement, vous pouvez utiliser MLflow Tracking.
 
-Dans cet exercice, vous allez utiliser MLflow dans un notebook s’exécutant sur une instance de calcul pour journaliser l’entraînement des modèles.
+Dans cet exercice, vous utiliserez MLflow dans un notebook exécuté sur une instance de calcul pour enregistrer l’entraînement du modèle.
 
 ## Avant de commencer
 
