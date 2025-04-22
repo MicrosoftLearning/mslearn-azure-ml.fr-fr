@@ -45,84 +45,52 @@ Dans cet exercice, vous allez utiliser le portail Azure pour provisionner Azure 
 1. Notez la section **Ressources**, qui inclut les **Données**, les **Travaux** et les **Modèles**, entre autres. Les ressources sont consommées ou créées lors de l’entraînement ou du scoring d’un modèle. Les ressources sont utilisées pour l’entraînement, le déploiement et la gestion de vos modèles et peuvent être versionnées pour suivre votre historique.
 1. Remarquez que la section **Gérer** qui contient le **Calcul** entre autres. Il s’agit de ressources d’infrastructure nécessaires à l’entraînement ou au déploiement d’un modèle Machine Learning.
 
-## Créer un pipeline d’entraînement
+## Entraîner un modèle à l’aide d’AutoML
 
 Pour explorer l’utilisation des ressources et des éléments dans l’espace de travail Azure Machine Learning, essayons d’entraîner un modèle.
 
-Un moyen rapide de créer un pipeline d’entraînement de modèle consiste à utiliser le **Concepteur**.
+Un moyen rapide d’entraîner et de trouver le meilleur modèle pour une tâche qui utilise vos données consiste à utiliser l’option **AutoML**.
 
 > **Remarque** : Des fenêtres contextuelles peuvent apparaître dans l’ensemble du studio pour vous guider. Vous pouvez fermer et ignorer toutes les fenêtres contextuelles et vous concentrer sur les instructions de ce labo.
 
-1. Sélectionnez la page **Concepteur** dans le menu situé à gauche du studio.
-1. Sélectionnez l’exemple **Régression - Prédiction du prix des véhicules automobiles (simple)** .
+1. Téléchargez les données d’entraînement qui seront utilisées à l’adresse `https://github.com/MicrosoftLearning/mslearn-azure-ml/raw/refs/heads/main/Labs/02/diabetes-data.zip`, puis extrayez les fichiers compressés.
+1. Dans Azure Machine Learning Studio, sélectionnez la page **AutoML** dans le menu de gauche.
+1. Sélectionnez **+ Nouveau travail ML automatisé**.
+1. Lors de l’étape **Paramètres de base**, donnez un nom unique à votre travail d’entraînement et testez ou utilisez les valeurs affectées par défaut. Cliquez sur **Suivant**.
+1. Lors de l’étape **Type et données de tâche**, sélectionnez **Classification** comme type de tâche, puis sélectionnez **+ Créer** pour ajouter vos données d’entraînement.
+2. Sur la page **Créer une ressource de données**, lors de l’étape **Type de données**, donnez un nom à votre ressource de données (par exemple, `training-data`), puis sélectionnez **Suivant**.
+1. Lors de l’étape **Source de données**, sélectionnez **Fichiers locaux** pour charger les données d’entraînement que vous avez préalablement téléchargées. Cliquez sur **Suivant**.
+1. Lors de l’étape **Type de stockage de destination**, vérifiez que **Stockage Blob Azure** est sélectionné comme type de magasin de données et que **workspaceblobstore** est le magasin de données sélectionné. Cliquez sur **Suivant**.
+1. Lors de l’étape **Sélection de la MLTable**, sélectionnez **Charger un dossier**, puis sélectionnez le dossier que vous avez extrait du fichier compressé que vous aviez téléchargé. Cliquez sur **Suivant**.
+1. Passez en revue les paramètres de votre ressource de données, puis sélectionnez **Créer**.
+1. Une fois revenu à l’étape **Type et données de tâche**, sélectionnez les données que vous venez de charger, puis cliquez sur **Suivant**.
 
-    Un nouveau pipeline s’affiche. En haut du pipeline, un composant s’affiche pour charger les **Données sur le prix des véhicules automobiles (brutes)** . Le pipeline traite les données et entraîne un modèle de régression linéaire pour prédire le prix de chaque automobile.
-1. Sélectionner **Configurer & soumettre** en haut de la page pour ouvrir la boîte de dialogue **Configurer la tâche de pipeline**
-1. Sur la page **De base**, sélectionnez **Créer** et définissez le nom de l'expérience sur `train-regression-designer`, puis sélectionnez **Suivant**.
-1. Dans la page **Entrées et sorties**, sélectionnez **Suivant** sans apporter de modifications.
-1. Une erreur s’affiche dans la page **Paramètres d’exécution**, car vous n’avez pas de calcul par défaut pour exécuter le pipeline.
+> **Conseil** : vous devrez peut-être sélectionner à nouveau le type de tâche **Classification** avant de passer à l’étape suivante.
 
-Créons une cible de calcul.
+1. Lors de l’étape **Paramètres de tâche**, sélectionnez **Diabétique (booléen)** comme colonne cible, puis ouvrez l’option **Afficher les paramètres de configuration supplémentaires**.
+1. Dans le volet **Configuration supplémentaire**, remplacez la mesure principale par **Précision**, puis sélectionnez **Enregistrer**.
+1. Développez l’option **Limites** et définissez les propriétés suivantes :
+    * **Nombre maximal d’essais** : 10
+    * **Délai d’expiration de l’expérience (minutes)**  : 60
+    * **Délai d’expiration d’une itération (minutes)**  : 15
+    * **Autoriser l’arrêt anticipé** : coché
 
-## Créer une cible de calcul
+1. Pour les **Données de test**, sélectionnez **Fractionner le test d’entraînement** et vérifiez que le **Pourcentage de test des données** est défini sur 10. Cliquez sur **Suivant**.
+1. Lors de l’étape **Calcul**, vérifiez que le type de calcul est **Sans serveur** et que la taille de la machine virtuelle sélectionnée est **Standard_DS3_v2**. Cliquez sur **Suivant**.
 
-Pour exécuter une charge de travail dans l’espace de travail Azure Machine Learning, vous devez avoir une ressource de calcul. L’un des avantages d’Azure Machine Learning est la possibilité de créer une ressource de calcul basée sur le cloud, sur laquelle vous pouvez exécuter des expériences et des scripts d’apprentissage à grande échelle.
+> **Remarque** : Les instances de calcul et les clusters sont basés sur des images de machines virtuelles Azure standard. Pour cet exercice, l’image *Standard_DS3_v2* est recommandée afin d’obtenir l’équilibre optimal entre coûts et performances. Si votre abonnement s’accompagne d’un quota qui ne couvre pas cette image, choisissez-en une autre. Gardez cependant à l’esprit qu’une image plus grande peut entraîner des coûts plus élevés, tandis qu’une plus petite risque de ne pas suffire pour effectuer les tâches. Vous pouvez également demander à votre administrateur Azure d’étendre votre quota.
 
-1. Dans le studio Azure Machine Learning, sélectionnez la page **Calcul** dans le menu de gauche. Vous pouvez utiliser quatre sortes de ressources de calcul :
-    - **Instances de calcul** : machine virtuelle gérée par Azure Machine Learning. Idéal pour le développement quand vous explorez des données et expérimentez de manière itérative des modèles Machine Learning.
-    - **Clusters de calcul** : clusters scalables de machines virtuelles pour le traitement à la demande du code d’expérimentation. Idéal pour exécuter du code de production ou des travaux automatisés.
-    - **Clusters Kubernetes** : Un cluster Kubernetes utilisé pour l'apprentissage et le scoring. Idéal pour le déploiement de modèles en temps réel à grande échelle.
-    - **Capacité de calcul attachée** : attachez vos ressources de calcul Azure existantes à l’espace de travail, telles que les machines virtuelles ou les clusters Azure Databricks.
-
-    Pour entraîner un modèle Machine Learning que vous avez créé avec le concepteur, vous pouvez utiliser une instance de calcul ou un cluster de calcul.
-
-2. Sous l’onglet **Instances de calcul**, ajoutez une nouvelle instance de calcul avec les paramètres suivants. 
-    - **Nom de la capacité de calcul** : *Entrez un nom unique*
-    - **Emplacement** : *automatiquement le même emplacement que votre espace de travail*
-    - **Type de machine virtuelle** : `CPU`
-    - **Taille de machine virtuelle** : `Standard_DS11_v2`
-    - **Quota disponible** : affiche les cœurs dédiés disponibles.
-    - **Afficher les paramètres avancés** : notez les paramètres suivants, mais ne les sélectionnez pas :
-        - **Activer l’accès SSH** : `Unselected` *(vous pouvez utiliser cette option pour avoir un accès direct à la machine virtuelle en utilisant un client SSH)*
-        - **Activer un réseau virtuel** : `Unselected` *(vous utiliserez généralement cette option dans un environnement d’entreprise pour améliorer la sécurité réseau)*
-        - **Attribuer à un autre utilisateur** : `Unselected` *(vous pouvez utiliser cette option pour attribuer une instance de calcul à un scientifique des données)*
-        - **Provisionner avec un script d’installation** : `Unselected` *(permet d’ajouter un script à exécuter sur l’instance distante lors de la création)*
-        - **Attribuer une identité managée** : `Unselected`*(Vous pouvez joindre des identités managées affectées par le système ou par l’utilisateur pour accorder l’accès aux ressources)*
-
-3. Sélectionnez **Créer** et patientez jusqu’à ce que l’instance de calcul démarre et que son état passe à **En cours d’exécution**.
-
-> **Remarque** : Les instances de calcul et les clusters sont basés sur des images de machines virtuelles Azure standard. Pour cet exercice, l’image *Standard_DS11_v2* est recommandée pour obtenir un équilibre optimal entre coûts et performances. Si votre abonnement s’accompagne d’un quota qui ne couvre pas cette image, choisissez-en une autre. Gardez cependant à l’esprit qu’une image plus grande peut entraîner des coûts plus élevés, tandis qu’une plus petite risque de ne pas suffire pour effectuer les tâches. Vous pouvez également demander à votre administrateur Azure d’étendre votre quota.
-
-## Exécuter votre pipeline d’entraînement
-
-Vous avez créé une cible de calcul et vous pouvez maintenant exécuter votre exemple de pipeline d’entraînement dans le Concepteur.
-
-1. Accédez à la page **Concepteur**.
-1. Sélectionnez le brouillon de pipeline **Régression - Prédiction du prix des véhicules automobiles (simple)** .
-1. Sélectionner **Configurer & soumettre** en haut de la page pour ouvrir la boîte de dialogue **Configurer la tâche de pipeline**
-1. Sur la page **De base**, sélectionnez **Créer** et définissez le nom de l'expérience sur `train-regression-designer`, puis sélectionnez **Suivant**.
-1. Dans la page **Entrées et sorties**, sélectionnez **Suivant** sans apporter de modifications.
-1. Dans les **Paramètres d’exécution**, dans le menu déroulant **Sélectionner le type de calcul**, sélectionnez *Instance de calcul* et, dans le menu déroulant **Sélectionner une instance de calcul Azure ML**, sélectionnez l’instance de calcul créée.
-1. Sélectionnez **Évaluer et soumettre** pour examiner le travail de pipeline, puis **Envoyer** pour exécuter le pipeline de formation.
-
-Le pipeline d’entraînement est maintenant soumis à l’instance de calcul. L’exécution du pipeline prendra environ 10 minutes. Explorons d’autres pages en attendant.
+1. Passez en revue tous vos paramètres, puis sélectionnez **Soumettre le travail d’entraînement**.
 
 ## Utiliser des travaux pour afficher votre historique
 
-Chaque fois que vous exécutez un script ou un pipeline dans l’espace de travail Azure Machine Learning, il est enregistré en tant que **travail**. Les travaux vous permettent de suivre les charges de travail que vous avez exécutées et de les comparer entre elles. Les travaux appartiennent à une **expérience**, qui vous permet de regrouper des exécutions de travaux.
+Une fois le travail soumis, une redirection vous amène sur la page du travail. Les travaux vous permettent de suivre les charges de travail que vous avez exécutées et de les comparer entre elles. Les travaux appartiennent à une **expérience**, qui vous permet de regrouper des exécutions de travaux. 
 
-1. Accédez à la page **Travaux** avec le menu situé à gauche du studio Azure Machine Learning.
-1. Sélectionnez l’expérience **train-regression-designer** pour afficher ses exécutions de travail. Vous y verrez une vue d’ensemble de tous les travaux qui font partie de cette expérience. Si vous avez exécuté plusieurs pipelines d’entraînement, cette vue vous permet de comparer les pipelines et d’identifier le meilleur.
-1. Sélectionnez le dernier travail de l’expérience **train-regression-designer**.
-1. Une fois le pipeline d’entraînement affiché, vous pouvez voir les composants qui ont été exécutés avec succès ou ayant échoué. Si le travail est toujours en cours d’exécution, vous pouvez également identifier la tâche en cours de réalisation.
-1. Pour afficher les détails du travail de pipeline, sélectionnez l’**Aperçu du travail** en haut à droite pour développer l’**Aperçu des tâches du pipeline**.
-1. Notez que dans les paramètres **Vue d’ensemble**, vous trouverez l’état du travail, qui a créé le pipeline, quand il a été créé et le temps qu’il a fallu pour exécuter le pipeline complet (entre autres).
+1. Notez que dans les paramètres de **Vue d’ensemble**, vous pouvez consulter l’état du travail, son créateur, sa date de création et le temps total de son exécution (entre autres).
+1. L’exécution du travail d’entraînement doit prendre entre 10 et 20 minutes. Une fois le travail terminé, vous pouvez également afficher les détails de chaque exécution pour les composants individuels, y compris leur sortie. N’hésitez pas à explorer la page du travail pour comprendre comment les modèles sont entraînés.
 
-    Quand vous exécutez un script ou un pipeline en tant que travail, vous pouvez définir toutes les entrées et documenter toutes les sorties. En outre, Azure Machine Learning assure automatiquement le suivi des propriétés de votre travail. En utilisant des travaux, vous pouvez facilement afficher votre historique pour comprendre ce que vous ou vos collègues avez déjà fait.
-
+    En outre, Azure Machine Learning effectue automatiquement un suivi des propriétés de votre travail. En utilisant des travaux, vous pouvez facilement afficher votre historique pour comprendre ce que vous ou vos collègues avez déjà fait.
     Pendant l’expérimentation, les travaux permettent de suivre les différents modèles que vous entraînez pour les comparer et identifier le meilleur modèle. Pendant la production, les travaux vous permettent de vérifier si les charges de travail automatisées se sont exécutées comme prévu.
-
-1. Une fois votre travail terminé, vous pouvez également afficher les détails de chaque exécution de composant individuel, y compris la sortie. N’hésitez pas à explorer le pipeline pour comprendre comment le modèle est entraîné.
 
 ## Supprimer les ressources Azure
 

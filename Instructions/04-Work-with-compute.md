@@ -54,6 +54,26 @@ Pour créer l’espace de travail Azure Machine Learning, vous allez utiliser Az
 
 1. Attendez que la commande se termine, ce qui prend généralement entre 5 et 10 minutes.
 
+    <details>  
+    <summary><b>Conseil sur la résolution de problèmes</b> : erreur de création d’espace de travail</summary><br>
+    <p>Si vous recevez une erreur lors de la création d’un espace de travail via l’interface CLI, vous devez provisionner la ressource manuellement :</p>
+    <ol>
+        <li>Sur la page d’accueil du portail Azure, sélectionnez <b>+Créer une ressource</b>.</li>
+        <li>Recherchez <i>Machine Learning</i>, puis sélectionnez <b>Azure Machine Learning</b>. Sélectionnez <b>Créer</b>.</li>
+        <li>Créez une ressource Azure Machine Learning avec les paramètres suivants : <ul>
+                <li><b>Abonnement</b> : <i>votre abonnement Azure</i></li>
+                <li><b>Groupe de ressources</b> : rg-dp100-labs</li>
+                <li><b>Nom de l’espace de travail</b> : mlw-dp100-labs</li>
+                <li><b>Région</b> : <i>sélectionnez la région géographique la plus proche de vous</i></li>
+                <li><b>Compte de stockage</b> : <i>notez le nouveau compte de stockage par défaut à créer pour votre espace de travail</i></li>
+                <li><b>Coffre de clés</b> : <i>notez le nouveau coffre de clés par défaut à créer pour votre espace de travail</i></li>
+                <li><b>Application Insights</b> : <i>notez la nouvelle ressource Application Insights par défaut à créer pour votre espace de travail</i></li>
+                <li><b>Registre de conteneurs</b> : aucun (<i>un registre est créé automatiquement la première fois que vous déployez un modèle sur un conteneur</i>)</li>
+            </ul>
+        <li>Sélectionnez <b>Examiner et créer</b> et attendez que l’espace de travail et les ressources associées soient créés. Cela prend généralement environ 5 minutes.</li>
+    </ol>
+    </details>
+
 ## Créer le script de configuration d’une instance de calcul
 
 Pour exécuter des notebooks dans l’espace de travail Azure Machine Learning, vous devez avoir une instance de calcul. Vous pouvez utiliser un script d’installation pour configurer l’instance de calcul au moment de la création.
