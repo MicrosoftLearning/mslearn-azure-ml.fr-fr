@@ -47,6 +47,41 @@ Pour créer l’espace de travail Azure Machine Learning, une instance de calcul
 
 1. Attendez que le script se termine, ce qui prend généralement entre 5 et 10 minutes.
 
+    <details>
+    <summary><b>Conseil sur la résolution de problèmes</b> : erreur de création d’espace de travail</summary><br>
+    <p>Si vous rencontrez une erreur lors de l’exécution du script d’installation via l’interface de ligne de commande, vous devez provisionner les ressources manuellement :</p>
+    <ol>
+        <li>Sur la page d’accueil du portail Azure, sélectionnez <b>+Créer une ressource</b>.</li>
+        <li>Recherchez <i>Machine Learning</i>, puis sélectionnez <b>Azure Machine Learning</b>. Sélectionnez <b>Créer</b>.</li>
+        <li>Créez une ressource Azure Machine Learning avec les paramètres suivants : <ul>
+                <li><b>Abonnement</b> : <i>votre abonnement Azure</i></li>
+                <li><b>Groupe de ressources</b> : rg-dp100-labs</li>
+                <li><b>Nom de l’espace de travail</b> : mlw-dp100-labs</li>
+                <li><b>Région</b> : <i>sélectionnez la région géographique la plus proche de vous</i></li>
+                <li><b>Compte de stockage</b> : <i>notez le nouveau compte de stockage par défaut à créer pour votre espace de travail</i></li>
+                <li><b>Coffre de clés</b> : <i>notez le nouveau coffre de clés par défaut à créer pour votre espace de travail</i></li>
+                <li><b>Application Insights</b> : <i>notez la nouvelle ressource Application Insights par défaut à créer pour votre espace de travail</i></li>
+                <li><b>Registre de conteneurs</b> : aucun (<i>un registre est créé automatiquement la première fois que vous déployez un modèle sur un conteneur</i>)</li>
+            </ul>
+        <li>Sélectionnez <b>Examiner et créer</b> et attendez que l’espace de travail et les ressources associées soient créés. Cela prend généralement environ 5 minutes.</li>
+        <li>Sélectionnez <b>Accéder à la ressource</b> et sur la page <b>Vue d’ensemble</b> de la ressource, cliquez sur <b>Lancer Studio</b>. Un autre onglet s’ouvre dans votre navigateur pour ouvrir le studio Azure Machine Learning.</li>
+        <li>Fermez les fenêtres contextuelles qui s’affichent dans le studio.</li>
+        <li>Dans Azure Machine Learning Studio, accédez à la page <b>Calcul</b> et sélectionnez <b>+ Nouveau</b> dans l’onglet <b>Instances de calcul</b>.</li>
+        <li>Nommez l’instance de calcul avec un nom unique, puis sélectionnez <b>Standard_DS11_v2</b> comme taille de machine virtuelle.</li>
+        <li>Sélectionnez <b>Vérifier + créer</b>, puis sélectionnez <b>Créer</b>.</li>
+        <li>Ensuite, sélectionnez l’onglet <b>Clusters de calcul</b>, puis sélectionnez <b>+ Nouveau</b>.</li>
+        <li>Choisissez la même région que celle où vous avez créé votre espace de travail, puis sélectionnez <b>Standard_DS11_v2</b> comme taille de machine virtuelle. Cliquez sur <b>Suivant</b>.</li>
+        <li>Nommez le cluster avec un nom unique, puis sélectionnez <b>Créer</b>.</li>
+        <li>Télécharger les données d’entraînement à partir du fichier https://github.com/MicrosoftLearning/mslearn-azure-ml/raw/refs/heads/main/Labs/09/data/diabetes.csv</li>
+        <li>Dans Azure Machine Learning Studio, accédez à la page <b>Données</b> et sélectionnez <b>+ Créer</b>.</li>
+        <li>Nommez la ressource de données <b>diabetes-data</b> et vérifiez que le type <b>Fichier (uri_file)</b> est sélectionné. Cliquez sur <b>Suivant</b>.</li>
+        <li>Sélectionnez <b>Fichiers locaux</b> comme source de données, puis cliquez sur <b>Suivant</b>.</li>
+        <li>Vérifiez que <b>Stockage Blob Azure</b> et <b>workspaceblobstore</b> sont respectivement sélectionnés comme type de stockage de destination et magasin de données. Cliquez sur <b>Suivant</b>.</li>
+        <li>Chargez le fichier .csv que vous avez téléchargé précédemment, puis sélectionnez <b>Suivant</b>.</li>
+        <li>Vérifiez les paramètres de votre ressource de données, puis sélectionnez <b>Créer</b>.</li>
+    </ol>
+    </details>
+
 ## Cloner les supports de labo
 
 Une fois que vous avez créé l’espace de travail et les ressources de calcul nécessaires, vous pouvez ouvrir le studio Azure Machine Learning et cloner les supports de labo dans l’espace de travail.
