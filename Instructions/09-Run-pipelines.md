@@ -116,7 +116,7 @@ Le code pour créer et soumettre un pipeline avec le SDK Python est fourni dans 
 
     > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Vérifiez que le notebook utilise le noyau **Python 3.10 - AzureML**.
 1. Exécutez toutes les cellules dans le notebook.
 
 ## Supprimer les ressources Azure

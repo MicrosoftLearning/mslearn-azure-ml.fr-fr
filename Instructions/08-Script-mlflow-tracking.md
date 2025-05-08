@@ -109,7 +109,7 @@ Vous disposez maintenant de toutes les ressources nécessaires. Vous pouvez donc
 
     > Sélectionnez **S’authentifier** et suivez les étapes à faire si une notification vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Vérifiez que le notebook utilise le noyau **Python 3.10 - AzureML**.
 1. Exécutez toutes les cellules dans le notebook.
 
 ## Supprimer les ressources Azure

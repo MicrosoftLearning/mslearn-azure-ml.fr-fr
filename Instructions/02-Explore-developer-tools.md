@@ -185,7 +185,7 @@ Maintenant que vous avez vérifié que le calcul nécessaire a été créé, vou
 
     > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier.
 
-1. Vérifiez que l’ordinateur portable utilise le noyau **Python 3.8 - AzureML** dans le coin supérieur droit de l’environnement de l’ordinateur portable. Chaque noyau a sa propre image avec son propre ensemble de packages préinstallé.
+1. Vérifiez que le notebook utilise le noyau **Python 3.10 - AzureML** dans le coin supérieur droit de l’environnement du notebook. Chaque noyau a sa propre image avec son propre ensemble de packages préinstallé.
 1. Exécutez toutes les cellules dans le notebook.
 
 Un travail est créé dans l’espace de travail Azure Machine Learning. Le travail suit les entrées définies dans la configuration de travail, le code utilisé et les sorties telles que les métriques pour évaluer les modèles.

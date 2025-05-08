@@ -109,7 +109,7 @@ L’utilisation d’un notebook attaché à une instance de calcul est idéale p
 
     > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Vérifiez que le notebook utilise le noyau **Python 3.10 - AzureML**.
 1. Exécutez toutes les cellules pour explorer le code et entraîner un modèle.
 1. Sélectionnez l’icône &#9776; en haut du notebook pour afficher le **menu du notebook**.
 1. Développez **Exporter en tant que**, puis sélectionnez **Python (.py)** pour convertir le notebook en script Python.
