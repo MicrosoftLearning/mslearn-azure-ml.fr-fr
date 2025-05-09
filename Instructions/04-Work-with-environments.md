@@ -109,7 +109,7 @@ Le code à utiliser pour créer et gérer des environnements avec le Kit SDK Pyt
 
     > Sélectionnez **S’authentifier** et suivez les étapes à faire si une notification vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Vérifiez que le notebook utilise le noyau **Python 3.10 - AzureML**.
 1. Exécutez toutes les cellules dans le notebook.
 
 ## Supprimer les ressources Azure

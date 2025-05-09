@@ -145,7 +145,7 @@ Les notebooks sont parfaits pour le développement ou le travail répétitif pen
 
     > Sélectionnez **S’authentifier** et suivez les étapes nécessaires si une notification apparaît et vous invite à vous authentifier.
 
-1. Vérifiez que le notebook utilise le noyau **Python 3.8 - AzureML**.
+1. Vérifiez que le notebook utilise le noyau **Python 3.10 - AzureML**.
 1. Exécutez toutes les cellules dans le notebook.
 
 ## Supprimer les ressources Azure
